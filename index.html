@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แจ้งซ่อมอุปกรณ์ - โรงเรียนเตรียมอุดมศึกษาพัฒนาการสุวรรณภูมิ</title>
+    <title>PET POINT PRINT - โรงเรียนเตรียมอุดมศึกษาพัฒนาการสุวรรณภูมิ</title>
     <link rel="icon" href="โลโก้สภานักเรียน.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* General Reset & Body Styling */
         * {
             margin: 0;
             padding: 0;
@@ -16,28 +15,228 @@
 
         body {
             font-family: 'Sarabun', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #041665 0%, #3e0972 80%);
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #00146d 0%,#00146d 100%);
             min-height: 100vh;
-            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        nav {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
         }
 
-        /* Container for the Form */
-        .container {
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            animation: slideUp 0.6s ease-out;
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        @keyframes slideUp {
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .dashboard-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .dashboard-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .dashboard-container {
+            width: 100%;
+            height: 600px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .dashboard-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .process-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .process-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 50%;
+            line-height: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -48,884 +247,241 @@
             }
         }
 
-        /* Header Section */
-        .header {
-            background: linear-gradient(135deg, #040056, #041665);
-            color: white;
-            padding: 30px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 1;
-            transition: all 0.3s ease;
-        }
-
-        .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
-            transition: all 0.3s ease;
-        }
-
-        /* Form Container */
-        .form-container {
-            padding: 40px;
-        }
-
-        /* Form Group Styling */
-        .form-group {
-            margin-bottom: 25px;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #374151;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .required {
-            color: #ef4444;
-        }
-
-        /* Form Control (Input/Textarea) Styling */
-        .form-control {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: white;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: #4f46e5;
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .form-control:hover {
-            border-color: #9ca3af;
-        }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* File Input Styling */
-        .file-input-container {
-            position: relative;
-            margin-top: 10px;
-        }
-
-        .file-input {
-            position: absolute;
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
-
-        .file-input-label {
-            display: block;
-            padding: 20px;
-            border: 2px dashed #d1d5db;
-            border-radius: 12px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: #f9fafb;
-            position: relative;
-        }
-
-        .file-input-label:hover {
-            border-color: #6366f1;
-            background: #f0f9ff;
-        }
-
-        .file-input-label.dragover {
-            border-color: #4f46e5;
-            background: #eef2ff;
-            transform: scale(1.02);
-        }
-
-        .file-preview {
-            display: none;
-            margin-top: 15px;
-            padding: 15px;
-            background: #f0f9ff;
-            border-radius: 12px;
-            border: 1px solid #e0e7ff;
-        }
-
-        .file-preview img {
-            max-width: 100%;
-            max-height: 200px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .file-info {
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #6b7280;
-        }
-
-        .remove-file {
-            background: #ef4444;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            margin-top: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .remove-file:hover {
-            background: #dc2626;
-        }
-
-        /* Priority Group Styling */
-        .priority-group {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .priority-option {
-            position: relative;
-        }
-
-        .priority-option input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-        }
-
-        .priority-label {
-            display: block;
-            padding: 15px;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: white;
-            font-weight: 500;
-        }
-
-        .priority-option input[type="radio"]:checked + .priority-label {
-            border-color: #4f46e5;
-            background: #4f46e5;
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .priority-low {
-            border-color: #10b981 !important;
-        }
-
-        .priority-option input[type="radio"]:checked + .priority-low {
-            background: #10b981 !important;
-        }
-
-        .priority-medium {
-            border-color: #f59e0b !important;
-        }
-
-        .priority-option input[type="radio"]:checked + .priority-medium {
-            background: #f59e0b !important;
-        }
-
-        .priority-high {
-            border-color: #ef4444 !important;
-        }
-
-        .priority-option input[type="radio"]:checked + .priority-high {
-            background: #ef4444 !important;
-        }
-
-        /* Submit Button Styling */
-        .submit-btn {
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(135deg, #4f46e5, #7c3aed);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
-        }
-
-        .submit-btn:active {
-            transform: translateY(0);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .submit-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .submit-btn:hover::before {
-            left: 100%;
-        }
-
-        /* Progress Bar Styling */
-        .progress-bar {
-            display: none;
-            width: 100%;
-            height: 6px;
-            background: #e5e7eb;
-            border-radius: 3px;
-            margin-top: 10px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #4f46e5, #7c3aed);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-
-        /* Message Styling (Success/Error) */
-        .success-message, .error-message {
-            display: none;
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 20px;
-            text-align: center;
-            animation: fadeIn 0.5s ease-out;
-            transition: all 0.3s ease;
-            color: white; /* Ensure text color is white for both */
-        }
-
-        .success-message {
-            background: linear-gradient(135deg, #10b981, #059669);
-        }
-
-        .error-message {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Floating Background Elements */
-        .floating-elements {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .floating-circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-circle:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-circle:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-
-        .floating-circle:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Developer Button */
-        .developer-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #1e88e5;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .developer-button:hover {
-            background-color: #1565c0;
-            transform: translateY(-2px);
-        }
-
-        /* Responsive Adjustments */
         @media (max-width: 768px) {
-            .container {
-                margin: 0 10px;
+            .nav-links {
+                display: none;
             }
             
-            .form-container {
-                padding: 30px 20px;
+            .hero h1 {
+                font-size: 2.5rem;
             }
             
-            .header h1 {
-                font-size: 1.8rem;
+            .hero p {
+                font-size: 1.1rem;
             }
             
-            .priority-group {
-                grid-template-columns: 1fr;
+            .dashboard-container {
+                height: 400px;
             }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
-    <div id="languageSwitcher" style="position: fixed; top: 20px; left: 20px; z-index: 999;">
-        <select id="languageSelect" style="padding: 8px 12px; border-radius: 10px; font-weight: 600; font-family: 'Sarabun'; background: white; border: 2px solid #ccc; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: all 0.3s ease;">
-            <option value="th">🇹🇭 ภาษาไทย</option>
-            <option value="en">🇺🇸 English</option>
-        </select>
-    </div>
+    <header>
+        <nav class="container">
+            <div class="logo">🌱 PET POINT PRINT</div>
+            <ul class="nav-links">
+                <li><a href="#home">หน้าหลัก</a></li>
+                <li><a href="#process">กระบวนการ</a></li>
+                <li><a href="#dashboard">สถิติ</a></li>
+                <li><a href="#contact">ติดต่อ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="floating-elements">
-        <div class="floating-circle"></div>
-        <div class="floating-circle"></div>
-        <div class="floating-circle"></div>
-    </div>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>PET POINT PRINT</h1>
+                <p>เส้นใยแห่งจิตอาสาเปลี่ยนขวดพลาสติกกลายเป็นฟิลาเม้นท์ ส่งเสริมอนุรักษ์สิ่งแวดล้อม </p>
+                <a href="#process" class="cta-button">เรียนรู้เพิ่มเติม</a>
+            </div>
+        </section>
 
-    <div style="text-align: center; margin-top: 25px;">
-        <img src="พระเกี้ยว และสภานักเรียน ตอพภ.png" alt="โลโก้โรงเรียนและสภานักเรียน" style="max-width: 200px; height: auto;">
-    </div>
-
-    <div class="container">
-        <div class="header">
-            <h1 id="title">ระบบแจ้งซ่อมแซมออนไลน์</h1>
-            <p id="subtitle">โรงเรียนเตรียมอุดมศึกษาพัฒนาการสุวรรณภูมิ</p>
-        </div>
-
-        <div class="form-container">
-            <form id="repairForm">
-                <div class="form-group">
-                    <label for="studentName" id="label-name">ชื่อ-นามสกุล <span class="required">*</span></label>
-                    <input type="text" id="studentName" class="form-control" required placeholder="กรุณากรอกชื่อ-นามสกุล หากไม่ต้องการระบุให้พิมพ์ ไม่ประสงค์ออกนาม">
+        <section class="container">
+            <div class="features">
+                <div class="feature-card">
+                    <span class="feature-icon">♻️</span>
+                    <h3>รีไซเคิลขวดพลาสติก</h3>
+                    <p>นำขวดพลาสติก PET มาทำเป็นฟิลาเม้นสำหรับ 3D Printing</p>
                 </div>
-
-                <div class="form-group">
-                    <label for="studentId" id="label-id">รหัสประจำตัวนักเรียน <span class="required">*</span></label>
-                    <input type="text" id="studentId" class="form-control" required placeholder="เช่น 05490" pattern="[0-9]{5}" title="กรุณากรอกรหัสนักเรียน 5 หลัก หากไม่ต้องการระบุให้พิมพ์ 99999">
+                <div class="feature-card">
+                    <span class="feature-icon">❤️</span>
+                    <h3>ชั่วโมงจิตอาสา</h3>
+                    <p>แปลงคะแนนเป็นชั่วโมงจิตอาสาเพื่อช่วยเหลือสังคม</p>
                 </div>
-
-                <div class="form-group">
-                    <label for="location" id="label-location">สถานที่/ห้อง <span class="required">*</span></label>
-                    <input type="text" id="location" class="form-control" required placeholder="เช่น ห้องเรียน 3205, ห้องคอมพิวเตอร์, ห้องน้ำ">
+                <div class="feature-card">
+                    <span class="feature-icon">🖨️</span>
+                    <h3>ฟิลาเม้นท์ 3D</h3>
+                    <p>แปรรูปขวดพลาสติกเป็นฟิลาเม้นท์สำหรับ 3D Printing</p>
                 </div>
+            </div>
+        </section>
 
-                <div class="form-group">
-                    <label for="equipment" id="label-equipment">อุปกรณ์ที่ต้องการซ่อม <span class="required">*</span></label>
-                    <input type="text" id="equipment" class="form-control" required placeholder="เช่น หลอดไฟ, พัดลม, เครื่องปรับอากาศ">
-                </div>
-
-                <div class="form-group">
-                    <label for="problemDescription" id="label-problem">รายละเอียดของปัญหา <span class="required">*</span></label>
-                    <textarea id="problemDescription" class="form-control" required placeholder="กรุณาอธิบายปัญหาที่พบ เช่น การทำงานผิดปกติ, ส่งผลกระทบต่อตัวเราอย่างไร หรือสาเหตุที่คาดว่าทำให้เกิดความเสียหาย"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label id="label-image">รูปภาพประกอบ (ไม่บังคับ)</label>
-                    <div class="file-input-container">
-                        <input type="file" id="imageFile" class="file-input" accept="image/*" multiple>
-                        <label for="imageFile" class="file-input-label" id="file-label">
-                            <div style="font-size: 2rem; margin-bottom: 10px;">📷</div>
-                            <div id="file-label-text">คลิกเพื่อเลือกรูปภาพ หรือลากวางที่นี่</div>
-                            <div style="font-size: 0.9rem; color: #6b7280; margin-top: 5px;" id="file-label-desc">
-                                รองรับไฟล์: JPG, PNG, GIF (สูงสุด 10MB ต่อไฟล์)
-                            </div>
-                        </label>
+        <section id="dashboard" class="container">
+            <div class="dashboard-section">
+                <h2>📊 สถิติและคะแนนปัจจุบัน</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="bottles-collected">1,248</div>
+                        <div class="stat-label">ขวดที่รวบรวมได้</div>
                     </div>
-                    <div id="filePreview" class="file-preview"></div>
-                </div>
-
-                <div class="form-group">
-                    <label id="label-priority">ระดับความเร่งด่วน <span class="required">*</span></label>
-                    <div class="priority-group">
-                        <div class="priority-option">
-                            <input type="radio" id="priorityLow" name="priority" value="ต่ำ" required>
-                            <label for="priorityLow" class="priority-label priority-low" id="priority-low-label">
-                                🟢 <span id="priority-low-text">ต่ำ</span><br>
-                                <small id="priority-low-desc">ไม่เร่งด่วน</small>
-                            </label>
-                        </div>
-                        <div class="priority-option">
-                            <input type="radio" id="priorityMedium" name="priority" value="ปานกลาง" required>
-                            <label for="priorityMedium" class="priority-label priority-medium" id="priority-medium-label">
-                                🟡 <span id="priority-medium-text">ปานกลาง</span><br>
-                                <small id="priority-medium-desc">ใช้งานได้บ้าง</small>
-                            </label>
-                        </div>
-                        <div class="priority-option">
-                            <input type="radio" id="priorityHigh" name="priority" value="สูง" required>
-                            <label for="priorityHigh" class="priority-label priority-high" id="priority-high-label">
-                                🔴 <span id="priority-high-text">สูง</span><br>
-                                <small id="priority-high-desc">เร่งด่วน</small>
-                            </label>
-                        </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="volunteer-hours">356</div>
+                        <div class="stat-label">ชั่วโมงจิตอาสา</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="filament-produced">89</div>
+                        <div class="stat-label">กิโลกรัมฟิลาเม้นท์</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="co2-saved">2.1</div>
+                        <div class="stat-label">ตัน CO2 ที่ลดลง</div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="contactInfo" id="label-contact">ช่องทางติดต่อกลับ</label>
-                    <input type="text" id="contactInfo" class="form-control" placeholder="Line ID หรือ Instagram account เพื่อติดตามสถานะการซ่อมแซม (ไม่บังคับ)">
+                <div class="dashboard-container">
+                    <iframe src="https://lookerstudio.google.com/embed/reporting/fcedf4e9-0580-48d9-b061-862bc77829ac/page/p_vzqgqjqged" 
+                            allowfullscreen 
+                            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+                    </iframe>
                 </div>
+            </div>
+        </section>
 
-                <button type="submit" class="submit-btn" id="submitBtn">
-                    📤 ส่งรายงานการซ่อม
-                </button>
-
-                <div class="progress-bar" id="progressBar">
-                    <div class="progress-fill" id="progressFill"></div>
+        <section id="process" class="container">
+            <div class="process-section">
+                <h2>🔄 กระบวนการทำงาน</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>รวบรวมขวด PET</h3>
+                        <p>นำขวดพลาสติก PET มาใส่ในตัวเครื่อง</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>แลกคะแนน</h3>
+                        <p>ได้รับคะแนนตามจำนวนขวดที่นำมาบริจาค</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>แปลงเป็นชั่วโมงจิตอาสา</h3>
+                        <p>ใช้คะแนนแลกเป็นชั่วโมงจิตอาสาเพื่อช่วยเหลือสังคม</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>ผลิตฟิลาเม้นท์</h3>
+                        <p>แปรรูปขวดพลาสติกเป็นฟิลาเม้นท์สำหรับ 3D Printing</p>
+                    </div>
                 </div>
+            </div>
+        </section>
+    </main>
 
-                <div id="successMessage" class="success-message">
-                    <h3 id="successTitle">✅ ส่งรายงานเรียบร้อยแล้ว!</h3>
-                    <p id="successDetail">ทางสภานักเรียนจะประสานกับคณะผู้บริหาร และทีมช่างโดยเร็ว <br>
-                    หมายเลขรายงาน: <span id="reportNumber"></span></p>
-                </div>
-
-                <div id="errorMessage" class="error-message">
-                    <h3>❌ เกิดข้อผิดพลาด</h3>
-                    <p id="errorDetail">กรุณาลองใหม่อีกครั้ง หรือติดต่อผู้ดูแลระบบ</p>
-                </div>
-            </form>
+    <footer id="contact">
+        <div class="container">
+            <h3>ติดต่อเรา</h3>
+            <p>📧 instagram: tupp.studentcouncil | 📱 0x-xxx-xxxx</p>
+            <p>🌍 ร่วมกันสร้างโลกที่ยั่งยืน ด้วย PET POINT PRINT</p>
         </div>
-    </div>
-
-    <a href="developer.html" class="developer-button" id="developerBtn">เกี่ยวกับผู้พัฒนา</a>
+    </footer>
 
     <script>
-        // Translation object containing all texts in Thai and English
-        const translations = {
-            th: {
-                title: "ระบบแจ้งซ่อมแซมออนไลน์",
-                subtitle: "โรงเรียนเตรียมอุดมศึกษาพัฒนาการสุวรรณภูมิ",
-                labelName: "ชื่อ-นามสกุล",
-                placeholderName: "กรุณากรอกชื่อ-นามสกุล หรือหากไม่ต้องการระบุให้พิมพ์ ไม่ประสงค์ออกนาม",
-                labelId: "รหัสประจำตัวนักเรียน",
-                placeholderId: "เช่น 05490 หรือหากไม่ต้องการระบุให้พิมพ์ 99999",
-                titleId: "กรุณากรอกรหัสนักเรียน 5 หลัก หากไม่ต้องการระบุให้พิมพ์ 99999",
-                labelLocation: "สถานที่/ห้อง",
-                placeholderLocation: "เช่น ห้องเรียน 3205, ห้องคอมพิวเตอร์, ห้องน้ำ",
-                labelEquipment: "อุปกรณ์ที่ต้องการซ่อม",
-                placeholderEquipment: "เช่น หลอดไฟ, พัดลม, เครื่องปรับอากาศ",
-                labelProblem: "รายละเอียดของปัญหา",
-                placeholderProblem: "กรุณาอธิบายปัญหาที่พบ เช่น การทำงานผิดปกติ, ส่งผลกระทบต่อตัวเราอย่างไร หรือสาเหตุที่คาดว่าทำให้เกิดความเสียหาย",
-                labelImage: "รูปภาพประกอบ (ไม่บังคับ)",
-                fileLabelText: "คลิกเพื่อเลือกรูปภาพ หรือลากวางที่นี่",
-                fileLabelDesc: "รองรับไฟล์: JPG, PNG, GIF (สูงสุด 10MB ต่อไฟล์)",
-                labelPriority: "ระดับความเร่งด่วน",
-                priorityLow: "ต่ำ",
-                priorityLowDesc: "ไม่เร่งด่วน",
-                priorityMedium: "ปานกลาง",
-                priorityMediumDesc: "ใช้งานได้บ้าง",
-                priorityHigh: "สูง",
-                priorityHighDesc: "เร่งด่วน",
-                labelContact: "ช่องทางติดต่อกลับ",
-                placeholderContact: "Line ID หรือ Instagram account เพื่อติดตามสถานะการซ่อมแซม (ไม่บังคับ)",
-                submitBtn: "📤 ส่งรายงานการซ่อม",
-                submitBtnLoading: "⏳ กำลังส่งข้อมูล...",
-                submitBtnUploading: "📤 กำลังอัปโหลดรูปภาพ...",
-                successTitle: "✅ ส่งรายงานเรียบร้อยแล้ว!",
-                successDetail: "ทางสภานักเรียนจะประสานกับคณะผู้บริหาร และทีมช่างโดยเร็ว <br>หมายเลขรายงาน:",
-                developerBtn: "เกี่ยวกับผู้พัฒนา",
-                errorMessage: "เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง",
-                fileTooLarge: "ไฟล์มีขนาดใหญ่เกินไป (สูงสุด 10MB)",
-                invalidFileType: "ประเภทไฟล์ไม่ถูกต้อง รองรับเฉพาะ JPG, PNG, GIF",
-                removeFile: "ลบไฟล์"
-            },
-            en: {
-                title: "Online Repair Request System",
-                subtitle: "TRIAMUDOMSUKSA PATTHANAKARN SUVARNNABHUMI SCHOOL",
-                labelName: "Full Name",
-                placeholderName: "Please enter your full name or type 'Anonymous' if you prefer not to disclose",
-                labelId: "Student ID",
-                placeholderId: "For example: 05490 or type 99999 if you prefer not to disclose",
-                titleId: "Please enter 5-digit student ID or type 99999 if you prefer not to disclose",
-                labelLocation: "Location/Room",
-                placeholderLocation: "For example: Classroom 3205, Computer Room, Restroom",
-                labelEquipment: "Equipment to Repair",
-                placeholderEquipment: "For example: Light bulb, Fan, Air conditioner",
-                labelProblem: "Problem Description",
-                placeholderProblem: "Please describe the problem found, such as malfunction, impact on you, or suspected cause of damage",
-                labelImage: "Attached Images (Optional)",
-                fileLabelText: "Click to select images or drag and drop here",
-                fileLabelDesc: "Supported files: JPG, PNG, GIF (max 10MB per file)",
-                labelPriority: "Urgency Level",
-                priorityLow: "Low",
-                priorityLowDesc: "Not urgent",
-                priorityMedium: "Medium",
-                priorityMediumDesc: "Partially usable",
-                priorityHigh: "High",
-                priorityHighDesc: "Urgent",
-                labelContact: "Contact Information",
-                placeholderContact: "Line ID or Instagram account to track repair status (optional)",
-                submitBtn: "📤 Submit Repair Report",
-                submitBtnLoading: "⏳ Submitting...",
-                submitBtnUploading: "📤 Uploading images...",
-                successTitle: "✅ Report Submitted Successfully!",
-                successDetail: "The student council will coordinate with administration and technician team promptly.<br>Report ID:",
-                developerBtn: "About Developer",
-                errorMessage: "An error occurred while submitting the data. Please try again.",
-                fileTooLarge: "File is too large (max 10MB)",
-                invalidFileType: "Invalid file type. Only JPG, PNG, GIF are supported",
-                removeFile: "Remove File"
-            }
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate numbers on scroll
+        function animateNumber(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 20);
+        }
+
+        // Intersection Observer for number animation
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
         };
 
-        // Google Apps Script Configuration: IMPORTANT! REPLACE THIS WITH YOUR DEPLOYED WEB APP URL
-        // After deploying your Google Apps Script, copy the Web App URL and paste it here.
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKwwCUHuRXuHoVdBd0Y_jH78tx1CA_ezNpkXIbLqafUr4hFR289WXGDIEB7GKmpNIO/exec'; // Updated URL
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statsCards = entry.target.querySelectorAll('.stat-number');
+                    const targets = [1248, 356, 89, 2.1];
+                    
+                    statsCards.forEach((card, index) => {
+                        animateNumber(card, targets[index]);
+                    });
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
-        let currentLanguage = 'th'; // Default language
-
-        // Get DOM elements
-        const languageSelect = document.getElementById('languageSelect');
-        const repairForm = document.getElementById('repairForm');
-        const imageFile = document.getElementById('imageFile');
-        const fileInputLabel = document.getElementById('file-label');
-        const filePreview = document.getElementById('filePreview');
-        const submitBtn = document.getElementById('submitBtn');
-        const progressBar = document.getElementById('progressBar');
-        const progressFill = document.getElementById('progressFill');
-        const successMessage = document.getElementById('successMessage');
-        const errorMessage = document.getElementById('errorMessage');
-        const reportNumberSpan = document.getElementById('reportNumber');
-
-        let selectedFiles = []; // To store selected files
-
-        // Function to update content based on selected language
-        function updateContentForLanguage() {
-            const lang = currentLanguage;
-            const t = translations[lang];
-
-            document.getElementById('title').textContent = t.title;
-            document.getElementById('subtitle').textContent = t.subtitle;
-            document.getElementById('label-name').innerHTML = t.labelName + ' <span class="required">*</span>';
-            document.getElementById('studentName').placeholder = t.placeholderName;
-            document.getElementById('label-id').innerHTML = t.labelId + ' <span class="required">*</span>';
-            document.getElementById('studentId').placeholder = t.placeholderId;
-            document.getElementById('studentId').title = t.titleId;
-            document.getElementById('label-location').innerHTML = t.labelLocation + ' <span class="required">*</span>';
-            document.getElementById('location').placeholder = t.placeholderLocation;
-            document.getElementById('label-equipment').innerHTML = t.labelEquipment + ' <span class="required">*</span>';
-            document.getElementById('equipment').placeholder = t.placeholderEquipment;
-            document.getElementById('label-problem').innerHTML = t.labelProblem + ' <span class="required">*</span>';
-            document.getElementById('problemDescription').placeholder = t.placeholderProblem;
-            document.getElementById('label-image').textContent = t.labelImage;
-            document.getElementById('file-label-text').textContent = t.fileLabelText;
-            document.getElementById('file-label-desc').textContent = t.fileLabelDesc;
-            document.getElementById('label-priority').innerHTML = t.labelPriority + ' <span class="required">*</span>';
-            document.getElementById('priority-low-text').textContent = t.priorityLow;
-            document.getElementById('priority-low-desc').textContent = t.priorityLowDesc;
-            document.getElementById('priority-medium-text').textContent = t.priorityMedium;
-            document.getElementById('priority-medium-desc').textContent = t.priorityMediumDesc;
-            document.getElementById('priority-high-text').textContent = t.priorityHigh;
-            document.getElementById('priority-high-desc').textContent = t.priorityHighDesc;
-            document.getElementById('label-contact').textContent = t.labelContact;
-            document.getElementById('contactInfo').placeholder = t.placeholderContact;
-            document.getElementById('submitBtn').textContent = t.submitBtn;
-            document.getElementById('successTitle').textContent = t.successTitle;
-            // The successDetail text needs to be re-set including the span for report number
-            document.getElementById('successDetail').innerHTML = t.successDetail.replace('<span id="reportNumber"></span>', '') + '<span id="reportNumber"></span>';
-            document.getElementById('developerBtn').textContent = t.developerBtn;
-            document.getElementById('errorDetail').textContent = t.errorMessage; // Update error message text
+        const dashboardSection = document.querySelector('.dashboard-section');
+        if (dashboardSection) {
+            observer.observe(dashboardSection);
         }
 
-        // Initialize content on load
-        document.addEventListener('DOMContentLoaded', () => {
-            currentLanguage = localStorage.getItem('language') || 'th';
-            languageSelect.value = currentLanguage;
-            updateContentForLanguage();
-        });
-
-        // Event listener for language switcher
-        languageSelect.addEventListener('change', (event) => {
-            currentLanguage = event.target.value;
-            localStorage.setItem('language', currentLanguage);
-            updateContentForLanguage();
-        });
-
-        // Handle file selection
-        imageFile.addEventListener('change', (event) => {
-            handleFiles(event.target.files);
-        });
-
-        // Handle drag and drop
-        fileInputLabel.addEventListener('dragover', (event) => {
-            event.preventDefault();
-            fileInputLabel.classList.add('dragover');
-        });
-
-        fileInputLabel.addEventListener('dragleave', () => {
-            fileInputLabel.classList.remove('dragover');
-        });
-
-        fileInputLabel.addEventListener('drop', (event) => {
-            event.preventDefault();
-            fileInputLabel.classList.remove('dragover');
-            handleFiles(event.dataTransfer.files);
-        });
-
-        // Function to process selected or dropped files
-        function handleFiles(files) {
-            filePreview.innerHTML = ''; // Clear previous previews
-            selectedFiles = []; // Clear previous selected files
-
-            if (files.length === 0) {
-                filePreview.style.display = 'none';
-                return;
+        // Add parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero');
+            const speed = scrolled * 0.5;
+            
+            if (parallax) {
+                parallax.style.transform = `translateY(${speed}px)`;
             }
+        });
 
-            filePreview.style.display = 'block';
-
-            Array.from(files).forEach(file => {
-                const maxSize = 10 * 1024 * 1024; // 10MB
-                const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
-
-                if (file.size > maxSize) {
-                    // Use a custom message box instead of alert()
-                    displayMessage(translations[currentLanguage].fileTooLarge, 'error');
-                    return;
-                }
-                if (!allowedTypes.includes(file.type)) {
-                    // Use a custom message box instead of alert()
-                    displayMessage(translations[currentLanguage].invalidFileType, 'error');
-                    return;
-                }
-
-                selectedFiles.push(file); // Add valid file to array
-
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    const previewItem = document.createElement('div');
-                    previewItem.style.marginBottom = '10px';
-                    previewItem.style.borderBottom = '1px solid #e0e7ff';
-                    previewItem.style.paddingBottom = '10px';
-                    previewItem.style.display = 'flex';
-                    previewItem.style.flexDirection = 'column';
-                    previewItem.style.alignItems = 'center';
-
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.alt = file.name;
-                    img.style.maxWidth = '100%';
-                    img.style.maxHeight = '150px';
-                    img.style.objectFit = 'contain';
-                    img.style.borderRadius = '8px';
-                    img.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
-                    previewItem.appendChild(img);
-
-                    const fileInfo = document.createElement('div');
-                    fileInfo.className = 'file-info';
-                    fileInfo.textContent = `${file.name} (${(file.size / (1024 * 1024)).toFixed(2)} MB)`;
-                    fileInfo.style.marginTop = '8px';
-                    previewItem.appendChild(fileInfo);
-
-                    const removeBtn = document.createElement('button');
-                    removeBtn.className = 'remove-file';
-                    removeBtn.textContent = translations[currentLanguage].removeFile;
-                    removeBtn.addEventListener('click', () => {
-                        selectedFiles = selectedFiles.filter(f => f !== file);
-                        previewItem.remove();
-                        if (selectedFiles.length === 0) {
-                            filePreview.style.display = 'none';
-                        }
-                        // Clear the input so same file can be selected again
-                        imageFile.value = ''; 
-                    });
-                    previewItem.appendChild(removeBtn);
-                    
-                    filePreview.appendChild(previewItem);
-                };
-                reader.readAsDataURL(file);
+        // Add loading animation for iframe
+        const iframe = document.querySelector('iframe');
+        if (iframe) {
+            iframe.addEventListener('load', function() {
+                this.style.opacity = '1';
+                this.style.transition = 'opacity 0.5s ease-in-out';
             });
         }
-
-        // Function to display messages (instead of alert)
-        function displayMessage(message, type) {
-            const msgElement = type === 'success' ? successMessage : errorMessage;
-            const detailElement = type === 'success' ? document.getElementById('successDetail') : document.getElementById('errorDetail');
-
-            // Hide existing messages
-            successMessage.style.display = 'none';
-            errorMessage.style.display = 'none';
-
-            // Set message
-            if (type === 'success') {
-                // For success, specifically handle the report number span
-                document.getElementById('successTitle').textContent = translations[currentLanguage].successTitle; // Reset title
-                detailElement.innerHTML = message; // Update content, assumes message already includes span for reportNumber
-            } else {
-                // For error, just set the text content
-                document.getElementById('errorTitle').textContent = '❌ เกิดข้อผิดพลาด'; // Assuming error title is always fixed or needs to be set
-                detailElement.textContent = message;
-            }
-            
-            // Show new message
-            msgElement.style.display = 'block';
-            
-            // Hide message after a few seconds
-            setTimeout(() => {
-                msgElement.style.display = 'none';
-            }, 5000); // Hide after 5 seconds
-        }
-
-
-        // Handle form submission
-        repairForm.addEventListener('submit', async (event) => {
-            event.preventDefault(); // Prevent default form submission
-
-            submitBtn.disabled = true; // Disable button
-            submitBtn.textContent = translations[currentLanguage].submitBtnLoading; // Update button text
-            progressBar.style.display = 'block'; // Show progress bar
-            progressFill.style.width = '0%'; // Reset progress bar
-            successMessage.style.display = 'none'; // Hide success message
-            errorMessage.style.display = 'none'; // Hide error message
-
-            const formData = new FormData();
-            formData.append('timestamp', new Date().toLocaleString()); // Add timestamp
-            formData.append('studentName', document.getElementById('studentName').value);
-            formData.append('studentId', document.getElementById('studentId').value);
-            formData.append('location', document.getElementById('location').value);
-            formData.append('equipment', document.getElementById('equipment').value);
-            formData.append('problemDescription', document.getElementById('problemDescription').value);
-            
-            const selectedPriority = document.querySelector('input[name="priority"]:checked');
-            if (selectedPriority) {
-                formData.append('priority', selectedPriority.value);
-            } else {
-                // If no priority is selected, display an error and stop
-                displayMessage(translations[currentLanguage].errorMessage + " (" + translations[currentLanguage].labelPriority + " not selected)", 'error');
-                submitBtn.disabled = false;
-                submitBtn.textContent = translations[currentLanguage].submitBtn;
-                progressBar.style.display = 'none';
-                return;
-            }
-
-            formData.append('contactInfo', document.getElementById('contactInfo').value);
-
-            // Append files if any
-            if (selectedFiles.length > 0) {
-                submitBtn.textContent = translations[currentLanguage].submitBtnUploading;
-                for (let i = 0; i < selectedFiles.length; i++) {
-                    formData.append('files', selectedFiles[i]); // Append each file
-                }
-            }
-
-            try {
-                // Send data to Google Apps Script
-                const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (response.ok) {
-                    const data = await response.json(); // Parse JSON response
-                    if (data.status === 'success') {
-                        progressFill.style.width = '100%'; // Complete progress bar
-                        reportNumberSpan.textContent = data.reportId; // Display report ID
-                        // Reconstruct success message with new report ID
-                        const successMsgText = translations[currentLanguage].successDetail.replace('<span id="reportNumber"></span>', `<span id="reportNumber">${data.reportId}</span>`);
-                        displayMessage(successMsgText, 'success');
-                        
-                        repairForm.reset(); // Clear the form fields
-                        filePreview.innerHTML = ''; // Clear file previews
-                        filePreview.style.display = 'none'; // Hide file preview container
-                        selectedFiles = []; // Clear selected files array
-                    } else {
-                        displayMessage(translations[currentLanguage].errorMessage + `<br>${data.message || ''}`, 'error');
-                    }
-                } else {
-                    displayMessage(translations[currentLanguage].errorMessage + `<br>Server returned status: ${response.status} ${response.statusText}`, 'error');
-                }
-            } catch (error) {
-                displayMessage(translations[currentLanguage].errorMessage + `<br>Network error: ${error.message}`, 'error');
-                console.error('Error submitting form:', error); // Log detailed error
-            } finally {
-                submitBtn.disabled = false; // Re-enable button
-                submitBtn.textContent = translations[currentLanguage].submitBtn; // Reset button text
-                progressBar.style.display = 'none'; // Hide progress bar
-            }
-        });
     </script>
 </body>
 </html>
